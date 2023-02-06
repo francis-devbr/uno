@@ -7,6 +7,8 @@ import { Link, useNavigate } from "react-router-dom";
 import API from "../../api/API";
 import { useDispatch } from "../../utils/hooks";
 import { setInLobby, setPlayerId } from "../../stores/features/gameSlice";
+import "./MainMenu.css";
+
 const style = {
   color: "#fff",
 };
@@ -28,10 +30,44 @@ const MainMenu = () => {
   };
 
   return (
-    <Paper key="main-menu">
+    <Paper key="main-menu" className="bg-wallet">
       <Grid container alignItems="center" justifyContent="center" spacing={4}>
         <Grid item xs={10}>
-          <Typography fontSize={22}>Start Playing</Typography>
+        </Grid>
+        <Grid
+          item
+          container
+          alignItems="start"
+          justifyContent="left"
+          spacing={2}
+          sx={12}
+        >
+          <Grid item xs={12} md={5}>
+            <button className="btn-dracards-vs-b w-50">VS BOT</button>
+            <button className="btn-dracards-vs-p w-50">VS PLAYER</button>
+            <div className="box-dracards">
+              <p className="title-box-dracards">NAME OF DECK</p>
+              <small>50/50</small>
+            </div>
+          </Grid>
+
+          <Grid item xs={12} md={5} >
+            <button className="btn-game-mode">GAME MODE V <i class="fas fa-arrow-circle-down"></i></button>
+            <div className="box-dracards">
+              <div className="box-mode text-left">
+                <p className="title-box-dracards">Casual</p>
+                <small>Improve your skills</small>
+              </div>
+              <div className="box-mode">
+                <p className="title-box-dracards">PRIVATE</p>
+                <small>Battle your friedns</small>
+              </div>
+              <div className="box-mode">
+                <p className="title-box-dracards">RANKED</p>
+                <small>Become a Markevian</small>
+              </div>
+            </div>
+          </Grid>
         </Grid>
         <Grid
           item
@@ -40,7 +76,7 @@ const MainMenu = () => {
           justifyContent="center"
           spacing={2}
           sx={12}
-        >
+        > 
           <Grid item xs={12} md={5}>
             <Button
               disabled={!API.isOnline}

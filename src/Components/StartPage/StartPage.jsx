@@ -56,7 +56,7 @@ export default function StartPage() {
         }}
         className="img"
       >
-        <img src="assets/images/uno-logo.png" alt="UNO Logo" />
+        <img src="https://storage.googleapis.com/dracards-game-frontend-public-assets/logo-dracards.png" alt="UNO Logo" />
       </motion.div>
       <Typography
         variant="h4"
