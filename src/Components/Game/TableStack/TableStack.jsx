@@ -28,6 +28,7 @@ export default function TableStack() {
             layoutId={card.layoutId}
             color={card.color}
             digit={card.digit}
+            image={card.image}
             action={card.action}
             width={200}
             flip={card.flip}

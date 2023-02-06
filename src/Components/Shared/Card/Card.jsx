@@ -36,19 +36,6 @@ const Root = styled.div`
     transform: translateZ(1px);
     font-family: sans-serif;
 
-    .value {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: var(--color);
-      font-size: var(--fontBig);
-      font-family: sans-serif !important;
-      font-weight: bold;
-      text-shadow: 5px 5px black;
-      -webkit-text-stroke: black 2px;
-    }
-
     .card-icon {
       width: 80%;
       position: absolute;
@@ -57,70 +44,60 @@ const Root = styled.div`
       transform: translate(-50%, -50%);
     }
 
-    .value-small {
+    .card-icon-image {
+      width: 100%;
       position: absolute;
-      color: white;
-      -webkit-text-stroke: black 1.5px;
-      font-weight: bold;
-      font-size: var(--fontSmall);
-      font-style: italic;
-      font-family: sans-serif !important;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+    }
 
-      &.value-tl {
-        top: 14px;
-        left: 22px;
-      }
+    .value-souls {
+      height: 2.5em;
 
-      &.value-br {
-        bottom: 14px;
-        right: 22px;
-        transform: scale(-1);
-      }
+      width: 2.5em;
+      position: absolute;
+      z-index: 2;
+      top: 10px;
+      left: 150px;
 
-      @media screen and (max-width: 1000px) {
-        -webkit-text-stroke: black 1px;
-
-        .value {
-          text-shadow: 3px 3px black;
-        }
-
-        &.value-tl {
-          top: 9px;
-          left: 13px;
-        }
-
-        &.value-br {
-          bottom: 9px;
-          right: 13px;
-          transform: scale(-1);
-        }
+      &.value-souls p {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        font-weight: bold;
+        font-size: var(--fontSouls);
+        color: white;
+        -webkit-text-stroke: black 1.5px;
+        font-family: sans-serif !important;
       }
     }
 
-    .icon-small {
+    .value-power {
+      height: 2em;
+      width: 2em;
       position: absolute;
-      width: 20%;
-      &.icon-tl {
-        top: 25px;
-        left: 20px;
-      }
+     
+      z-index: 2;
+      top: 65px;
+      left: 157px;
 
-      &.icon-br {
-        bottom: 25px;
-        right: 20px;
-        transform: scale(-1);
-      }
-      @media screen and (max-width: 1000px) {
-        &.icon-tl {
-          top: 14px;
-          left: 11px;
-        }
-
-        &.icon-br {
-          bottom: 14px;
-          right: 11px;
-          transform: scale(-1);
-        }
+      &.value-power p {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        font-weight: bold;
+        font-size: var(--fontPower);
+        color: white;
+        -webkit-text-stroke: black 1.5px;
+        font-family: sans-serif !important;
       }
     }
   }
@@ -134,6 +111,7 @@ export default function Card({
   id = "",
   color = "",
   digit,
+  image,
   action = "",
   flip = false,
   rotationY = 180,
@@ -147,54 +125,25 @@ export default function Card({
   };
 
   const getFrontContent = () => {
-    if (color === "black" && action === "wild")
-      return <Image src={`assets/images/wild.png`} ratio={590 / 418} />;
-
-    if (color === "black")
-      return (
-        <>
-          <Image src={`assets/images/front-${color}.png`} ratio={590 / 418} />
-          <img src="assets/images/draw4.png" className="card-icon" alt="" />
-          <img
-            className="icon-small icon-tl"
-            src={`assets/images/${action}-blank.png`}
-            alt=""
-          />
-          <img
-            className="icon-small icon-br"
-            src={`assets/images/${action}-blank.png`}
-            alt=""
-          />
-        </>
-      );
-
-    if (action)
-      return (
-        <>
-          <Image src={`assets/images/front-${color}.png`} ratio={590 / 418} />
-          <img
-            src={`assets/images/${action}-${color}.png`}
-            className="card-icon"
-            alt=""
-          />
-          <img
-            className="icon-small icon-tl"
-            src={`assets/images/${action}-blank.png`}
-            alt=""
-          />
-          <img
-            className="icon-small icon-br"
-            src={`assets/images/${action}-blank.png`}
-            alt=""
-          />
-        </>
-      );
     return (
       <>
-        <Image src={`assets/images/front-${color}.png`} ratio={590 / 418} />
-        <p className="value">{digit}</p>
-        <p className="value-small value-tl">{digit}</p>
-        <p className="value-small value-br">{digit}</p>
+        <Image
+          src={`assets/images/cards/fr_${color}.svg`}
+          ratio={590 / 418}
+          zindex={1}
+        />
+        <img
+          src={`assets/images/cards/art/${image}`}
+          className="card-icon-image"
+          alt=""
+        />
+        <div className="value-souls">
+          <p className="">{digit}</p>
+        </div>
+
+        <div className="value-power">
+          <p className="">{Math.floor(Math.random() * (99 - 1 + 1)) + 1}</p>
+        </div>
       </>
     );
   };
@@ -211,7 +160,7 @@ export default function Card({
       }}
       whileHover={
         playable
-          ? { y: -40, transition: { duration: 0.3 } }
+          ? { y: -100, transition: { duration: 0.3 } }
           : { y: 0, transition: { duration: 0.3 } }
       }
       animate={{ rotateY: rotationY, y: 0 }}
@@ -223,7 +172,7 @@ export default function Card({
     >
       <div className="front">{getFrontContent()}</div>
       <div className="back">
-        <Image src={`assets/images/backside.png`} ratio={590 / 418} />
+        <Image src={`assets/images/cards/backside.svg`} ratio={590 / 418} />
       </div>
     </Root>
   );

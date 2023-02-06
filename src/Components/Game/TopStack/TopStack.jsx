@@ -11,7 +11,7 @@ const Root = styled.div`
 
 export default function TopStack() {
   const { player, currentPlayer } = useSelector((state) => ({
-    player: state.game.players[2],
+    player: state.game.players[1],
     currentPlayer: state.game.currentPlayer,
   }));
   const cards = player?.cards || [];

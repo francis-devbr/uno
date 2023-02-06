@@ -63,7 +63,7 @@ const Lobby = () => {
         </Grid>
         <Grid item xs={6}>
           <Typography>
-            Joined ( <Span>{players.length}</Span>/4 )
+            Joined ( <Span>{players.length}</Span>/2 )
           </Typography>
         </Grid>
         <Grid

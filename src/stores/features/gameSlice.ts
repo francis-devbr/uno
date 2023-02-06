@@ -165,8 +165,9 @@ export const gameSlice = createSlice({
             ].layoutId;
           shouldFlip = true;
         } else {
-          layoutId = curPlayerObj.cards.find((c) => c.id === card?.id)
-            ?.layoutId;
+          layoutId = curPlayerObj.cards.find(
+            (c) => c.id === card?.id
+          )?.layoutId;
           const cardToMove = curPlayerObj.cards.filter(
             (c) => c.layoutId === layoutId
           )[0];
@@ -175,6 +176,7 @@ export const gameSlice = createSlice({
           card.color = cardToMove.color;
           card.action = cardToMove.action;
           card.digit = cardToMove.digit;
+          card.image = cardToMove.image;
         }
 
         state.tableStack = [
@@ -184,6 +186,7 @@ export const gameSlice = createSlice({
             color: card.color,
             action: card.action,
             digit: card.digit,
+            image: card.image,
             flip: shouldFlip,
             rotationY: 0,
           },

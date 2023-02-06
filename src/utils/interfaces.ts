@@ -11,6 +11,7 @@ export interface Card {
   layoutId?: string;
   digit?: number;
   color?: "red" | "blue" | "green" | "yellow" | "black";
+  image?:"";
   action?: "reverse" | "skip" | "draw two" | "draw four" | "wild";
   flip?: boolean;
   rotationY?: number;
