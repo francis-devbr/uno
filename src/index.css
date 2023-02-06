@@ -19,6 +19,8 @@
 
   --fontBig: 7rem;
   --fontSmall: 3rem;
+  --fontSouls: 2rem;
+  --fontPower: 1.3rem;
 }
 
 @media screen and (max-width: 1600px) {
@@ -28,6 +30,7 @@
 
     --fontBig: 5rem;
     --fontSmall: 2rem;
+    --fontSouls: 1.6rem;
   }
 }
 
@@ -38,6 +41,7 @@
 
     --fontBig: 4rem;
     --fontSmall: 1.4rem;
+    --fontSouls: 1rem;
   }
 }
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap");

@@ -12,12 +12,18 @@ const Root = styled.div`
     left: 0;
     object-fit: cover;
     cursor: inherit;
-  }
+    z-index:${(props) => props.zindex}
 `;
 
-export default function Image({ src, alt = " ", ratio = 9 / 16, ...props }) {
+export default function Image({
+  src,
+  alt = " ",
+  ratio = 9 / 16,
+  zindex = 0,
+  ...props
+}) {
   return (
-    <Root ratio={ratio} {...props}>
+    <Root ratio={ratio} zindex={zindex} {...props}>
       <img src={src} alt={alt} />
     </Root>
   );

@@ -88,6 +88,7 @@ export default function DrawingStack() {
             layoutId={card.layoutId}
             color={card.color}
             digit={card.digit}
+            image={card.image}
             action={card.action}
             width={200}
             disableShadow={true}

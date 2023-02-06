@@ -28,6 +28,12 @@ class _Loader extends EventsObject {
     "assets/images/skip-red.png",
     "assets/images/skip-yellow.png",
     "assets/images/wild.png",
+    "assets/images/cards/fr_common.svg",
+    "assets/images/cards/fr_epic.svg",
+    "assets/images/cards/fr_legendary.svg",
+    "assets/images/cards/fr_rare.svg",
+    "assets/images/cards/fr_uncommon.svg",
+    "assets/images/cards/backside.svg",
   ];
   audios = {
     music: "assets/audio/bg-music.mp3",

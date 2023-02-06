@@ -14,6 +14,8 @@ const Root = styled.div`
   }
 `;
 
+
+
 export default function Table() {
   return (
     <Root>
