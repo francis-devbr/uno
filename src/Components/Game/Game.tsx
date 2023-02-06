@@ -19,6 +19,10 @@ import TopSoulBar from "./TopSoulBar/TopSoulBar.jsx";
 import TopPowerBar from "./TopPower/TopPowerBar.jsx";
 import PlayerSoulBar from "./PlayerSoulBar/PlayerSoulBar.jsx";
 import PlayerPowerBar from "./PlayerPower/PlayerPowerBar.jsx";
+import EndTurn from "./EndTurn/EndTurn.jsx";
+import ConfigGame from "./ConfigGame/ConfigGame.jsx";
+import PlayerBattleField from "./PlayerBattleField/PlayerBattleField.jsx";
+import EnemyBattleField from "./EnemyBattleField/EnemyBattleField.jsx";
 
 export default function Game() {
   const dispatch = useDispatch();
@@ -74,9 +78,13 @@ export default function Game() {
       <AnimateSharedLayout>
         <TableStack />
         <TopSoulBar/>
+        <ConfigGame/>
         <TopPowerBar/>
+        <EnemyBattleField/>
         <TopStack />
         <PlayerStack />
+        <EndTurn/>
+        <PlayerBattleField/>
         <PlayerSoulBar/>
         <PlayerPowerBar/>
         <DrawingStack />
