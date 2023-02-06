@@ -15,6 +15,10 @@ import { Player } from "../../utils/interfaces.js";
 import API from "../../api/API";
 import { Navigate } from "react-router";
 import GameAudio from "../../utils/audio.js";
+import TopSoulBar from "./TopSoulBar/TopSoulBar.jsx";
+import TopPowerBar from "./TopPower/TopPowerBar.jsx";
+import PlayerSoulBar from "./PlayerSoulBar/PlayerSoulBar.jsx";
+import PlayerPowerBar from "./PlayerPower/PlayerPowerBar.jsx";
 
 export default function Game() {
   const dispatch = useDispatch();
@@ -68,8 +72,12 @@ export default function Game() {
     >
       <AnimateSharedLayout>
         <TableStack />
+        <TopSoulBar/>
+        <TopPowerBar/>
         <TopStack />
         <PlayerStack />
+        <PlayerSoulBar/>
+        <PlayerPowerBar/>
         <DrawingStack />
       </AnimateSharedLayout>
 

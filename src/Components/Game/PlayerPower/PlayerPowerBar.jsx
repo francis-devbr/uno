@@ -9,11 +9,6 @@ const Root = styled.div`
   --cardWidth: var(--cardWidthBigger);
 `;
 
-export default function TopSoulBar() {
- 
-  return (
-    <Root>
-      teste francis
-    </Root>
-  );
+export default function PlayerPowerBar() {
+  return <Root></Root>;
 }
