@@ -58,13 +58,12 @@ export default function Game() {
   return (
     <div
       style={{
-        backgroundImage: "url(assets/images/dracards_board01.png)",
+        backgroundImage: "url(assets/images/board-arena.png)",
         height: "100vh",
         width: "100%",
         overflowX: "hidden",
         backgroundSize: "cover",
-        backgroundPosition: "top center"
-
+        backgroundPosition: "center",
       }}
     >
       <AnimateSharedLayout>
