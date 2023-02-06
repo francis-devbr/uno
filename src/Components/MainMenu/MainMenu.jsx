@@ -46,7 +46,7 @@ const MainMenu = () => {
             <button className="btn-dracards-vs-b w-50">VS BOT</button>
             <button className="btn-dracards-vs-p w-50">VS PLAYER</button>
             <div className="box-dracards">
-              <p className="title-box-dracards">NAME OF DECK</p>
+              <p className="title-box-dracards" style={{fontFamily:'BIG_NOODLE_TITLING'}}>NAME OF DECK</p>
               <small>50/50</small>
             </div>
           </Grid>

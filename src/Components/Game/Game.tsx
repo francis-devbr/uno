@@ -66,13 +66,14 @@ export default function Game() {
         backgroundPosition: "center",
       }}
     >
+      
       <AnimateSharedLayout>
         <TableStack />
         <TopStack />
         <PlayerStack />
         <DrawingStack />
       </AnimateSharedLayout>
-
+      
       {finished && <Scoreboard players={playersOrder} />}
     </div>
   );

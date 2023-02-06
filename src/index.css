@@ -46,9 +46,20 @@
 }
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap");
 
+
+@font-face {
+  font-family: 'BIG_NOODLE_TITLING';
+  src: url('assets/fonts/BIG_NOODLE_TITLING.TTF') format('TTF');
+}
+
+@font-face {
+  font-family: 'BIG_NOODLE_TITLING_OBLIQUE';
+  src: url('assets/fonts/BIG_NOODLE_TITLING_OBLIQUE.TTF') format('TTF');
+}
+
+
 body {
   margin: 0;
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
